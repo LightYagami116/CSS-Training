@@ -635,7 +635,14 @@ input[type="search"] {
 	font-weight:normal;
 	font-style:normal;
 */
-
+*{
+	font: 100% Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	position: relative;
+	color: rgb(76, 67, 65);
+	font-weight:normal;
+	font-style:normal;
+}
 /*
 2. Browse up to line 244 and view the article styles section. These selectors are conflicting with the page-specific main content styles below them, and preventing some of the formatting from those rules from being applied. Modify the selectors in this section to resolve this conflict.
 */
@@ -648,11 +655,20 @@ input[type="search"] {
 	margin: 0 0 .1em;
 	border: none;
 */
+#galleries section h2{
+	font: 2.8em Georgia, Times, "Times New Roman", serif;
+	float: left;
+	margin: 0 0 .1em;
+	border: none;
+}
 
 /*
 4. These properties should be used to write a rule that changes the paragraph formatting for the text in the page sidebar. You should be careful to make sure the rule is written so that it overwrites previous paragraph styling and limits the styling to the contest sections
 
 	font-size: .9em;
 	margin: 0 auto 1.5em;
-
 */
+.contest p{
+	font-size: .9em;
+	margin: 0 auto 1.5em;
+}
