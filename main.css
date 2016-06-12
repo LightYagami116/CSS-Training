@@ -34,6 +34,12 @@ address, article, aside, canvas, details, figcaption, figure, footer, header, hg
 	display: block;
 }
 
+a {
+	text-decoration: none;
+	color: rgb(219,126,64);
+	border-bottom: 1px dotted rgb(219,126,64);
+}
+
 a:hover {
 	color: #7B798F;
 	border-bottom: 1px solid #7B798F;
@@ -63,16 +69,6 @@ html {
 	background: rgb(123, 121, 143);
 }
 
-body {
-	font: 100% Arial, Helvetica, sans-serif;
-	line-height: 1.5;
-	position: relative;
-	background: #fff;
-	color: rgb(76, 67, 65);
-	font-weight:normal;
-	font-style:normal;
-}
-
 #mainNav h2 {
 	display: none;
 }
@@ -93,6 +89,7 @@ em {
 body {
 	width: 1280px;
 	margin: 0 auto;
+	background: #fff;
 }
 
 header {
@@ -177,6 +174,10 @@ header a, header a:hover {
 	text-align: center;
 }
 
+#mainNav a:hover {
+	color: rgb(219,126,64);
+}
+
 #mainNav a.current {
 	color: rgb(123, 121, 143);
 	cursor: default;
@@ -191,22 +192,22 @@ header a, header a:hover {
 
 a.gallery {
 	background: url(../_images/icon_sprites_25.png) no-repeat 0 3px;
-	padding-left: 20px;
+	padding-left: 22px;
 }
 
 a.gear {
 	background: url(../_images/icon_sprites_25.png) no-repeat 38px -98px;
-	padding-left: 20px;
+	padding-left: 22px;
 }
 
 a.interact {
 	background: url(../_images/icon_sprites_25.png) no-repeat 62px -197px;
-	padding-left: 22px;
+	padding-left: 24px;
 }
 
 a.shop {
 	background: url(../_images/icon_sprites_25.png) no-repeat 6px -297px;
-	padding-left: 18px;
+	padding-left: 20px;
 }
 
 /*banner styles*/
@@ -241,41 +242,40 @@ a.shop {
 
 
 /*article styles*/
-article section {
+#content article section {
 	border-bottom: 2px solid rgb(76, 67, 65);
 	margin-bottom: 2em;
 }
 
-article h1, article h2, article h3 {
+#content article h1, #content article h2, #content article h3 {
 	font-family: Georgia, Times, "Times New Roman", serif;
 }
 
-article > h1 {
+#content article > h1 {
 	font-size: 1.8em;
 	border-bottom: 2px solid rgb(76, 67, 65);
 	margin-bottom: 1.5em;
 	background: url(../_images/icon_sprites_50.png) no-repeat
 }
 
-article h2 {
+#content article h2 {
 	font-size: 1.4em;
 	border-bottom: 2px solid rgb(76, 67, 65);
 	margin-top: 1.5em;
 }
 
-article h2 a {
+#content article h2 a {
 	color: rgb(76, 67, 65);
 	border: none;
 }
 
-article p {
+#content article p {
 	font-size:1em;
 	margin: 1.2em 0;
 }
-article ul {
+#content article ul {
 	margin:0 0 1em 50px;
 }
-
 
 /*page-specific main content styles*/
 #home h1 {
@@ -289,13 +289,6 @@ article ul {
 #contact h1 {
 	background-position: right -395px;
 	padding: 20px 0 5px;
-}
-
-#galleries h2 {
-	font: 2.8em Georgia, Times, "Times New Roman", serif;
-	float: left;
-	margin: 0 0 .1em;
-	border: none;
 }
 
 #galleries p {
@@ -384,6 +377,15 @@ article h2 a:hover {
 	margin-bottom: .5em;
 }
 
+.photos::after {
+	content: "All photos by James Williamson | used by permission";
+	font-style: italic;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
 /*contact styles*/
 
 #contact h2 {
@@ -419,7 +421,7 @@ article h2 a:hover {
 }
 
 #contact li a:hover {
-	color: rgb(219,126,64);
+	color: rgb(123, 121, 143);
 }
 
 a.twitter {
@@ -530,6 +532,10 @@ aside nav li {
 	background: rgb(216, 213, 188);
 }
 
+aside nav li:nth-child(even) {
+	background: rgb(237, 228, 214);
+}
+
 aside nav a:hover {
 	color: #fff;
 	border:none;
@@ -540,11 +546,6 @@ aside nav a:hover {
 	display: block;
 	margin: 0 auto;
 	margin-bottom: 1em;
-}
-
-.contest p {
-	font-size: .9em;
-	margin: 0 auto 1.5em;
 }
 
 .enter a {
@@ -586,6 +587,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', end
 	padding-top: 1.5em;
 }
 
+input[type="search"] {
+	width: 250px;
+}
+
 #pageFooter label {
 	display: block;
 	font-size: 1.2em;
@@ -615,46 +620,39 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', end
 	display: inline;
 }
 
-/*Add lab selectors here:*/
-
-/*write a selector that targets every link element throughout the entire site*/
-a{
-	text-decoration: none;
-	color: rgb(219,126,64);
-	border-bottom: 1px dotted rgb(219,126,64);
-}
-
-/*write a selector that targets the copyright paragraph in the footer*/
- .notice{
+.notice {
 	width: 300px;
 }
 
-/*write a selector that targets the dates inside the upcoming dates list on the index.htm page*/
-.news li > span{
-	font-weight: bold;
-}
 
-/*write a selector that changes the background of every 2nd list item in the unordered list that forms the archived gallery menu in the sidebar*/
-#archives li:nth-child(2n){
-	background: rgb(237, 228, 214);
-}
+/*
+1. These properties need to be applied to every element on the page as their default styling:
 
-/*write a selector that will change the color of the main navigation links as users hover over them*/
-#mainNav a:hover{
-	color: rgb(219,126,64);
-}
+	font: 100% Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	position: relative;
+	color: rgb(76, 67, 65);
+	font-weight:normal;
+	font-style:normal;
+*/
 
-/*write a selector that targets the search input text box in the footer, make sure it will ONLY target the search input form element*/
-input[type="search"]{
-	width: 250px;
-}
+/*
+2. Browse up to line 244 and view the article styles section. These selectors are conflicting with the page-specific main content styles below them, and preventing some of the formatting from those rules from being applied. Modify the selectors in this section to resolve this conflict.
+*/
 
-/*write a selector that will add the usage text you see here at the end of the photos gallery*/
-.photos::after{
-	content: "All photos by James Williamson | used by permission";
-	font-style: italic;
-	text-align: right;
-	margin: 0;
-	padding: 0;
-	display: block;
-}
+/*
+3. These properties need to be included in a rule that targets heading 2s on the Gallery page only
+
+	font: 2.8em Georgia, Times, "Times New Roman", serif;
+	float: left;
+	margin: 0 0 .1em;
+	border: none;
+*/
+
+/*
+4. These properties should be used to write a rule that changes the paragraph formatting for the text in the page sidebar. You should be careful to make sure the rule is written so that it overwrites previous paragraph styling and limits the styling to the contest sections
+
+	font-size: .9em;
+	margin: 0 auto 1.5em;
+
+*/
